@@ -1,0 +1,11 @@
+require 'open-uri'
+require 'xmlsimple'
+
+woe_id = <%= woe_id %>
+format = '<%= format %>'
+
+SCHEDULER.every '15m', :first_in => 0 do |job|
+  raw_weather_data = open("http://weather.yahooapis.com/forecastrss?w=#{woe_id}&u=#{format}").read
+  wd = XmlSimple.xml_in(raw_weather_data, { 'ForceArray' => false })['channel']['item']['condition']
+  send_event('<%= name %>', { :temp => "#{wd['temp']}&deg;#{format.upcase}", :condition => wd['text'] })
+end
