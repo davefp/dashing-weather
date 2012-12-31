@@ -12,7 +12,7 @@ module Dashing
       File.expand_path('../../templates', __FILE__)
     end
 
-    desc "install", "installs jobs or widgets"
+    desc "weather:install (widget|job) NAME WOE_ID FORMAT", "installs jobs or widgets"
     def install(type, name, woe_id, format)
       @name = Thor::Util.snake_case(name)
       case type
