@@ -8,4 +8,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://rubygems.org/gems/dashing-weather'
 
   s.files = Dir['templates/**/*'] + Dir['lib/**/*.rb']
+
+  s.add_dependency('xml-simple')
+  s.add_dependency('thor')
 end
