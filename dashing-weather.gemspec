@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.description = "Allows you to generate weather widgets and jobs for Dashing, the incredibly handsome dashboard framework"
   s.authors     = ["David Underwood"]
   s.email       = 'davefp@gmail.com'
-  s.homepage    = 'http://rubygems.org/gems/dashing-weather'
+  s.homepage    = 'https://github.com/davefp/dashing-weather'
 
   s.files = Dir['templates/**/*'] + Dir['lib/**/*.rb']
 
